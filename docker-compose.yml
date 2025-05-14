@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Your_strong_password123
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+  bot:
+    build: .
+    depends_on:
+      - db
+    volumes:
+      - "C:/TgBotDownloads:/app/Downloads"
+    environment:
+      - TELEGRAM_BOT_TOKEN=7731680815:AAGi5YQyhrW9K9VahWWeDhE7hDmZRLVPy1M
+      - DB_CONNECTION_STRING=Server=db;Database=telegrambotdb;User Id=sa;Password=Your_strong_password123;TrustServerCertificate=True;
+volumes:
+  mssql_data:

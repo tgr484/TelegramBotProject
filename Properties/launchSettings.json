@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "TelegramBotProject": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "TELEGRAM_BOT_TOKEN": "7731680815:AAGi5YQyhrW9K9VahWWeDhE7hDmZRLVPy1M",
+        "DB_CONNECTION_STRING": "Server=localhost;Database=telegrambotdb;User Id=sa;Password=Your_strong_password123;TrustServerCertificate=True;"
+      }
+    }
+  }
+}
